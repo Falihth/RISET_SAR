@@ -1,3 +1,7 @@
+/*
+  File untuk melakukan Riset pergerakan
+*/
+
 void New()
 {
   Serial.println(totalSteep);
@@ -13,15 +17,25 @@ void New()
       break;
   
     case 1:
+      static bool Resetcase1 = false; 
+
+    if (!Resetcase1) {
+        totalSteep = 0;
+        Resetcase1 = true; 
+    }
+
     Serial.println("Jalan ditempat");
     starValue();
     startDirection();
-    totalSteep = 0;
     // jarakDepan = getDistancePing(1);
     // jarakBelakang = getDistancePing(0);
     // jarakKiri = getDistanceTof(2);
     // jarakKanan = getDistanceTof(0);
-    runSt = 3; // Start
+    if (totalSteep == 20){
+      totalSteep = 0;
+      runSt = 3;
+    }
+     
     break;
 
 
@@ -33,9 +47,12 @@ void New()
     in_yaw = 0;
 
     if (totalSteep > 10) {
-        in_px = 5;
-        Serial.println("KANAN");
-        runSt = 4; 
+      if (totalSteep < 20){
+          in_px = 5;
+          Serial.println("KANAN");
+        } else {
+          runSt = 4; 
+        }
     }
 
     break; 
