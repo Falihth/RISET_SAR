@@ -1,4 +1,4 @@
-Day1 = jalan miring
+Day1 = jalan miring <br>
 Day4 = Jalan Lurus, kanan, kiri, muter.
 
 
