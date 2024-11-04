@@ -2,4 +2,4 @@ Day1 = jalan miring
 Day4 = Jalan Lurus, kanan, kiri, muter.
 
 
-TARGET = JALAN LURUS !!!!!!
+TARGET = Penambahan Sensor
