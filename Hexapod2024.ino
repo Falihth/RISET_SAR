@@ -17,7 +17,7 @@
 */
 
 
-int runSt = 0;
+int runSt = 1;
 byte printSt = 1;
 float jarakKiri, jarakKanan, jarakDepan, jarakBelakang, jarakGrip, jarakKorban;
 int pushButtonPin = 36;
@@ -47,6 +47,7 @@ void setup()
   beep();
   Serial.println("Setup Ok");
   Serial.println();
+  Serial.println(runSt);
 }
 
 void loop()
